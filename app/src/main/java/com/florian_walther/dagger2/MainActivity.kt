@@ -41,13 +41,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun withDagger1() {
-        val component = DaggerCarComponent.create()
+        /*val component = DaggerCarComponent.create()
         car = component.getCar()
-        car.drive()
+        car.drive()*/
     }
 
     private fun withDagger2() {
-        val component = DaggerCarComponent.create()
+        // can call DaggerCarComponent.create() only when none of the modules in the component takes
+        // arguments in its constructor
+        // val component = DaggerCarComponent.create()
+        // otherwise we must call DaggerCarComponent.builder() instead and pass in arguments (100
+        // as horsePower in this case)
+        val component = DaggerCarComponent.builder()
+                .dieselEngineModule(DieselEngineModule(100))
+                .build()
+
         component.inject(this)
         car.drive()
     }
