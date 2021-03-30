@@ -3,11 +3,6 @@ package com.florian_walther.dagger2
 import android.util.Log
 import javax.inject.Inject
 
-class Block()
-class Cylinders()
-class SparkPlugs()
-// data class Engine @Inject constructor(val block: Block, val cylinders: Cylinders, val sparkPlugs: SparkPlugs)
-class Engine @Inject constructor()
 
 // order: (1) constructor injection; (2) field injection; (3) method injection
 // if there's constructor injection then Dagger will automatically execute field injection and
@@ -31,6 +26,7 @@ class Car @Inject constructor(val engine: Engine, val wheels: Wheels) {
     }
 
     fun drive() {
+        engine.start()
         Log.d(TAG, "driving...")
     }
 }

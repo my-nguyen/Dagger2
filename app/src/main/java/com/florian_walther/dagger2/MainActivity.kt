@@ -17,10 +17,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun withoutDagger1() {
-        val block = Block()
+        /*val block = Block()
         val cylinders = Cylinders()
         val sparkPlugs = SparkPlugs()
-        // val engine = Engine(block, cylinders, sparkPlugs)
+        val engine = Engine(block, cylinders, sparkPlugs)
         val engine = Engine()
 
         val rims = Rims()
@@ -28,16 +28,16 @@ class MainActivity : AppCompatActivity() {
         val wheels = Wheels(rims, tires)
 
         val car = Car(engine, wheels)
-        car.drive()
+        car.drive()*/
     }
 
     private fun withoutDagger2() {
-        val engine = Engine()
+        /*val engine = Engine()
         val rims = Rims()
         val tires = Tires()
         val wheels = Wheels(rims, tires)
         val car = Car(engine, wheels)
-        car.drive()
+        car.drive()*/
     }
 
     private fun withDagger1() {

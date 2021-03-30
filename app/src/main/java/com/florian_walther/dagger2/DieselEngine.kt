@@ -3,12 +3,12 @@ package com.florian_walther.dagger2
 import android.util.Log
 import javax.inject.Inject
 
-class Remote @Inject constructor() {
+class DieselEngine @Inject constructor(): Engine {
     companion object {
         private const val TAG = "Car"
     }
 
-    fun setListener(car: Car) {
-        Log.d(TAG, "Remote connected")
+    override fun start() {
+        Log.d(TAG, "Diesel engine started")
     }
 }
