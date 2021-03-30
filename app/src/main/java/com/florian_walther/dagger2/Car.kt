@@ -19,6 +19,9 @@ class Car @Inject constructor(val engine: Engine, val wheels: Wheels) {
         const val TAG = "Car"
     }
 
+    // method injection
+    @Inject
+    fun
     fun drive() {
         Log.d(TAG, "driving...")
     }
