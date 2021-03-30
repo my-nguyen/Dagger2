@@ -12,8 +12,13 @@ import javax.inject.Inject
         Log.d(TAG, "Diesel engine started")
     }
 }*/
+
 // when a constructor takes in an argument that's only known at runtime
-class DieselEngine(private val horsePower: Int): Engine {
+// class DieselEngine(private val horsePower: Int): Engine {
+
+// with provideHorsePower
+class DieselEngine @Inject constructor(private val horsePower: Int): Engine {
+
     companion object {
         private const val TAG = "Car"
     }

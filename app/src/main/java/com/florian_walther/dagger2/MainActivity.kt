@@ -50,10 +50,18 @@ class MainActivity : AppCompatActivity() {
         // can call DaggerCarComponent.create() only when none of the modules in the component takes
         // arguments in its constructor
         // val component = DaggerCarComponent.create()
+
         // otherwise we must call DaggerCarComponent.builder() instead and pass in arguments (100
         // as horsePower in this case)
-        val component = DaggerCarComponent.builder()
+        /*val component = DaggerCarComponent.builder()
                 .dieselEngineModule(DieselEngineModule(100))
+                .build()*/
+
+        // another way to pass in argument (150 horsePower)
+        // make use of the newly defined CarComponent.Builder.horsePower()
+        val component = DaggerCarComponent.builder()
+                .horsePower(150)
+                .engineCapacity(1400)
                 .build()
 
         component.inject(this)
