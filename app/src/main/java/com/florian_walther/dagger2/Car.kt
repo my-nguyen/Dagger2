@@ -9,11 +9,6 @@ class SparkPlugs()
 // data class Engine @Inject constructor(val block: Block, val cylinders: Cylinders, val sparkPlugs: SparkPlugs)
 class Engine @Inject constructor()
 
-class Tires()
-class Rims()
-// data class Wheels @Inject constructor(val tires: Tires, val rims: Rims)
-class Wheels @Inject constructor()
-
 // order: (1) constructor injection; (2) field injection; (3) method injection
 // if there's constructor injection then Dagger will automatically execute field injection and
 // method injection and we don't have to do anything.

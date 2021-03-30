@@ -1,7 +1,7 @@
 package com.florian_walther.dagger2
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.florian_walther.dagger2.databinding.ActivityMainBinding
 import javax.inject.Inject
 
@@ -16,23 +16,26 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    /*private fun withoutDagger1() {
+    private fun withoutDagger1() {
         val block = Block()
         val cylinders = Cylinders()
         val sparkPlugs = SparkPlugs()
-        val engine = Engine(block, cylinders, sparkPlugs)
+        // val engine = Engine(block, cylinders, sparkPlugs)
+        val engine = Engine()
 
-        val tires = Tires()
         val rims = Rims()
-        val wheels = Wheels(tires, rims)
+        val tires = Tires()
+        val wheels = Wheels(rims, tires)
 
         val car = Car(engine, wheels)
         car.drive()
-    }*/
+    }
 
     private fun withoutDagger2() {
         val engine = Engine()
-        val wheels = Wheels()
+        val rims = Rims()
+        val tires = Tires()
+        val wheels = Wheels(rims, tires)
         val car = Car(engine, wheels)
         car.drive()
     }
